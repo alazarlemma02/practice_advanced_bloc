@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Demo extends StatefulWidget {
-  const Demo({super.key});
+class DemoPage extends StatelessWidget {
+  const DemoPage({super.key});
 
-  @override
-  State<Demo> createState() => _DemoState();
-}
-
-class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Demo'),
+        child: Text("This is a demo page!"),
       ),
     );
   }
