@@ -1,6 +1,6 @@
 import 'package:advanced_bloc/demo.dart';
 import 'package:advanced_bloc/features/welcome/bloc/welcome_bloc.dart';
-import 'package:advanced_bloc/features/welcome/widgets/welcome_screen_widget.dart';
+import 'package:advanced_bloc/features/welcome/screens/widgets/welcome_screen_widget.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

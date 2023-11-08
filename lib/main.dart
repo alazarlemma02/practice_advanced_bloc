@@ -1,5 +1,5 @@
 import 'package:advanced_bloc/features/welcome/bloc/welcome_bloc.dart';
-import 'package:advanced_bloc/features/welcome/screens/welcome_screen.dart';
+import 'package:advanced_bloc/features/welcome/screens/views/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
