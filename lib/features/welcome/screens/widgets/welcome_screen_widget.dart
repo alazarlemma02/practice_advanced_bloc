@@ -1,4 +1,5 @@
 import 'package:advanced_bloc/demo.dart';
+import 'package:advanced_bloc/features/authentication/screens/views/signin_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreenWidget extends StatelessWidget {
@@ -78,12 +79,12 @@ class WelcomeScreenWidget extends StatelessWidget {
                   duration: const Duration(milliseconds: 1000),
                   curve: Curves.easeInOut);
             } else {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const DemoPage(),
-                ),
-              );
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignInScreen(),
+                  ),
+                  (route) => false);
             }
           },
           child: SizedBox(
