@@ -1,4 +1,5 @@
 import 'package:advanced_bloc/demo.dart';
+import 'package:advanced_bloc/features/authentication/screens/views/signin_screen.dart';
 import 'package:advanced_bloc/features/welcome/bloc/welcome_bloc.dart';
 import 'package:advanced_bloc/features/welcome/screens/widgets/welcome_screen_widget.dart';
 import 'package:dots_indicator/dots_indicator.dart';
@@ -86,12 +87,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 alignment: Alignment.topRight,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const DemoPage(),
-                      ),
-                    );
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignInScreen(),
+                        ),
+                        (route) => false);
                   },
                   child: const Text(
                     "skip",

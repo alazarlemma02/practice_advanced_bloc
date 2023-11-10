@@ -7,7 +7,7 @@ class DemoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text("This is a demo page!"),
+        child: Text("This is a demo Home page!"),
       ),
     );
   }
