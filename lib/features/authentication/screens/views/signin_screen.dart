@@ -1,6 +1,6 @@
 import 'package:advanced_bloc/common/services/field_validator.dart';
 import 'package:advanced_bloc/features/authentication/bloc/signin_bloc/bloc/signin_bloc.dart';
-import 'package:advanced_bloc/features/authentication/screens/widgets/auth_buttons.dart';
+import 'package:advanced_bloc/features/authentication/screens/widgets/signin_auth_buttons.dart';
 import 'package:advanced_bloc/features/authentication/screens/widgets/social_media_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,6 +21,10 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Log In"),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(top: sH * 0.05, bottom: sH * 0.01),
         child: BlocBuilder<SigninBloc, SigninState>(
@@ -30,20 +34,6 @@ class _SignInScreenState extends State<SignInScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                      bottom: sH * 0.03,
-                    ),
-                    height: sH * 0.07,
-                    child: const Center(
-                      child: Text(
-                        'Log In',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                  ),
                   Container(
                     margin: EdgeInsets.only(
                       right: sW * 0.2,
@@ -78,7 +68,8 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                         SizedBox(
                           width: sH * 0.3,
-                          child: const Text("Or use your email account to login"),
+                          child:
+                              const Text("Or use your email account to login"),
                         ),
                       ],
                     ),
@@ -162,7 +153,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     // color: Colors.red[600],
                     height: sH * 0.25,
                     width: sW,
-                    child: AuthButtons(formkey: _formkey),
+                    child: SigninAuthButtons(formkey: _formkey),
                   ),
                 ],
               ),
