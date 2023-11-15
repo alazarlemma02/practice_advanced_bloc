@@ -1,3 +1,5 @@
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+
 class Validator {
   String? password;
   static String? validateName({required String fullName}) {
@@ -37,9 +39,9 @@ class Validator {
     return null;
   }
 
-  static String? validateProfileField({required String fieldData}) {
-    if (fieldData.isEmpty) {
-      return "Insert Profile picture";
+  static String? validateUsername({required String userName}) {
+    if (userName.isEmpty) {
+      return "Insert Username";
     }
   }
 
