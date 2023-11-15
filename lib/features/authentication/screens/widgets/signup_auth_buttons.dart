@@ -1,9 +1,12 @@
 import 'package:advanced_bloc/demo.dart';
 import 'package:advanced_bloc/features/authentication/data/services/signin_service.dart';
+import 'package:advanced_bloc/features/authentication/data/services/signup_service.dart';
+import 'package:advanced_bloc/features/authentication/screens/views/signin_screen.dart';
+import 'package:advanced_bloc/features/authentication/screens/views/signup_screen.dart';
 import 'package:flutter/material.dart';
 
-class AuthButtons extends StatelessWidget {
-  const AuthButtons({super.key, required this.formkey});
+class SignupAuthButtons extends StatelessWidget {
+  const SignupAuthButtons({super.key, required this.formkey});
   final GlobalKey<FormState> formkey;
 
   @override
@@ -24,19 +27,19 @@ class AuthButtons extends StatelessWidget {
           onPressed: () async {
             formkey.currentState!.validate();
             final response =
-                await SigninService(context: context).handleSignin("email");
+                await SignupService(context: context).handleSignup("email");
             if (response == true) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const DemoPage(),
-                ),
-              );
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignInScreen(),
+                  ),
+                  (route) => false);
             }
           },
           child: const Center(
             child: Text(
-              "Log In",
+              "Register",
               style: TextStyle(color: Colors.white, fontSize: 18),
             ),
           ),
@@ -81,10 +84,15 @@ class AuthButtons extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const SignInScreen()),
+                (route) => false);
+          },
           child: const Center(
             child: Text(
-              "Sign Up",
+              "Log In",
               style: TextStyle(
                 color: Colors.teal,
                 fontSize: 18,
